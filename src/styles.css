@@ -1,0 +1,85 @@
+.container {
+  background: linear-gradient(-225deg, #e3fdf5 0%, #ffe6fa 100%);
+  font-family: "Poppins", sans-serif;
+  display: block;
+  margin: 0 auto;
+}
+
+h1 {
+  font-weight: 700;
+  padding: 30px 0 10px 0;
+}
+
+.sunny {
+  color: #fee440;
+}
+
+.windy {
+  color: #219ebc;
+}
+
+.form-control {
+  box-shadow: #cfe4e9 0px 8px 8px 0;
+}
+button {
+  transition: all 200ms ease-in-out;
+  box-shadow: #219ebc 0px 8px 8px 0;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+#current-location {
+  width: 200%;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.results {
+  margin: 30px 70px;
+  padding: 20px 30px;
+  width: 60%;
+  line-height: 20px;
+}
+
+.city {
+  font-size: 40px;
+  line-height: 2em;
+}
+
+.temperature {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.units {
+  font-size: 20px;
+  position: relative;
+  top: -15px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.forecast {
+  margin-left: 14px;
+  width: 70%;
+}
+
+.col {
+  margin: 0 5px 30px 0;
+  border: 1px solid #219ebc;
+  border-radius: 10px;
+  padding: 10px 10px 30px 0px;
+  text-align: center;
+  line-height: 40px;
+}
+
+.forecast-date {
+  font-size: larger;
+}
