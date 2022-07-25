@@ -62,6 +62,11 @@ ul {
   top: -15px;
 }
 
+.temperature .active {
+  color: black;
+  cursor: default;
+}
+
 a {
   text-decoration: none;
 }
