@@ -1,9 +1,9 @@
-.container {
+#main {
   background: linear-gradient(-225deg, #e3fdf5 0%, #ffe6fa 100%);
   font-family: "Poppins", sans-serif;
   display: block;
   margin: 0 auto;
-}
+  }
 
 h1 {
   font-weight: 700;

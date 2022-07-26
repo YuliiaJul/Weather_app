@@ -76,13 +76,13 @@ function displayWeatherCondition(response) {
     response.data.weather[0].main;
   let iconElement = document.querySelector("#icon");
   let iconElementAPI = response.data.weather[0].icon;
+ 
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${iconElementAPI}@2x.png`
   );
-  iconElement.setAttribute("src", `./images/${iconElementAPI}.png`);
-  
-  if (iconElementAPI === "01d") {
+    
+ if (iconElementAPI === "01d") {
     iconElement.setAttribute("src", `./images/01d-main.png`);
   } else if (iconElementAPI === "02d") {
     iconElement.setAttribute("src", `./images/02d-main.png`);
@@ -90,7 +90,7 @@ function displayWeatherCondition(response) {
   else if (iconElementAPI === "03d") {
     iconElement.setAttribute("src", `./images/03d-main.png`);
   }
-  else if (iconElementAPI === "04d") {
+  else if (iconElementAPI === "04d" || "04n") {
     iconElement.setAttribute("src", `./images/04d-main.png`);
   }
   else if (iconElementAPI === "09d") {
