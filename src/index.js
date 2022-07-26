@@ -75,38 +75,39 @@ function displayWeatherCondition(response) {
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
   let iconElement = document.querySelector("#icon");
+  let iconElementAPI = response.data.weather[0].icon;
   iconElement.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    `http://openweathermap.org/img/wn/${iconElementAPI}@2x.png`
   );
   iconElement.setAttribute("src", `./images/${iconElementAPI}.png`);
-
-  //
-  iconElement.setAttribute("alt", response.data.weather[0].description);
-
+  
   if (iconElementAPI === "01d") {
-    iconElement.setAttribute("src", `../images/01d-main.png`);
-  } else if (mainIconElAPI === "02d") {
-    iconElement.setAttribute("src", `../images/02d-main.png`);
+    iconElement.setAttribute("src", `./images/01d-main.png`);
+  } else if (iconElementAPI === "02d") {
+    iconElement.setAttribute("src", `./images/02d-main.png`);
   }
-  else if (mainIconElAPI === "03d") {
-    iconElement.setAttribute("src", `../images/03d-main.png`);
+  else if (iconElementAPI === "03d") {
+    iconElement.setAttribute("src", `./images/03d-main.png`);
   }
-  else if (mainIconElAPI === "04d") {
-    iconElement.setAttribute("src", `../images/04d-main.png`);
+  else if (iconElementAPI === "04d") {
+    iconElement.setAttribute("src", `./images/04d-main.png`);
   }
-  else if (mainIconElAPI === "09d") {
-    iconElement.setAttribute("src", `../images/09d-main.png`);
+  else if (iconElementAPI === "09d") {
+    iconElement.setAttribute("src", `./images/09d-main.png`);
   }
-  else if (mainIconElAPI === "10d") {
-    iconElement.setAttribute("src", `../images/10d-main.png`);
+  else if (iconElementAPI === "10d") {
+    iconElement.setAttribute("src", `./images/10d-main.png`);
   }
-  else if (mainIconElAPI === "1d") {
-    iconElement.setAttribute("src", `../images/1d-main.png`);
+  else if (iconElementAPI === "11d") {
+    iconElement.setAttribute("src", `./images/11d-main.png`);
   }
-  else if (mainIconElAPI === "13d") {
-    iconElement.setAttribute("src", `../images/13d-main.png`);
+  else if (iconElementAPI === "13d") {
+    iconElement.setAttribute("src", `./images/13d-main.png`);
   }
+
+  iconElement.setAttribute("alt", response.data.weather[0].description);
+}
 
 function searchCity(city) {
   let apiKey = "5672206219da575792b9c579b8017620";
