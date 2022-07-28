@@ -109,6 +109,29 @@ function displayWeatherCondition(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Fri", "Sat", "Sun", "Mon", "Tue"];
+
+  let forecastHTML = `<div class="row">`;
+    days.forEach(function (day) {
+    forecastHTML = 
+    forecastHTML + 
+  `<div class="col">
+    <ul>
+      <li class="forecast-date">${day}</li>
+      <img src="./images/01d.png" alt="" />
+      <li class="forecast-temperature-max">25°C</li>
+      <li class="forecast-temperature-min">18°C</li>
+    </ul>
+  </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+console.log(forecastHTML);
+}
+
 function searchCity(city) {
   let apiKey = "5672206219da575792b9c579b8017620";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -166,3 +189,4 @@ let celciusLink = document.querySelector("#celcius-link");
 celciusLink.addEventListener("click", displayCelsiusTemperature);
 
 searchCity("Kyiv");
+displayForecast(); 
