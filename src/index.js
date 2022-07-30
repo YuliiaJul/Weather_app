@@ -64,8 +64,7 @@ dateInput.innerHTML = currentDate(date);
 function getForecast(coordinates) {
   let apiKey = "5672206219da575792b9c579b8017620";
   let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  console.log(apiURL);
-axios.get(apiURL).then(displayForecast);
+  axios.get(apiURL).then(displayForecast);
 }
 
 function displayWeatherCondition(response) {
@@ -119,27 +118,26 @@ function displayWeatherCondition(response) {
   }
 
 function displayForecast(response) {
-  console.log(response.data);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
-
-  let days = ["Fri", "Sat", "Sun", "Mon", "Tue"];
-
-  let forecastHTML = `<div class="row">`;
-    days.forEach(function (day) {
-    forecastHTML = 
+     let forecastHTML = `<div class="row">`;
+    forecast.forEach(function (forecastDay, index) {
+      if (index < 6) {
+     forecastHTML = 
     forecastHTML + 
-  `<div class="col">
+  `<div class="col" id="forecast-days">
     <ul>
-      <li class="forecast-date">${day}</li>
-      <img src="./images/01d.png" alt="" />
-      <li class="forecast-temperature-max">25°C</li>
-      <li class="forecast-temperature-min">18°C</li>
+      <li class="forecast-date">${formatDay(forecastDay.dt)}</li>
+      <img src="images/${forecastDay.weather[0].icon}.png";  alt="" />
+      <li class="forecast-temperature-max">${Math.round(forecastDay.temp.max)}°C</li>
+      <li class="forecast-temperature-min">${Math.round(forecastDay.temp.min)}°C</li>
     </ul>
   </div>`;
-  });
+    }
+    });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
-  }
+     }
 
 function searchCity(city) {
   let apiKey = "5672206219da575792b9c579b8017620";
