@@ -88,3 +88,7 @@ a {
 .forecast-date {
   font-size: larger;
 }
+
+.forecast-temperature-max {
+  font-weight: 600;
+}
