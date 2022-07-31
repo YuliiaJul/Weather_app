@@ -114,6 +114,9 @@ function displayWeatherCondition(response) {
 
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
+  celciusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+
   getForecast(response.data.coord);
   }
 
@@ -161,23 +164,22 @@ function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  celciusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+      }
 
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
   celciusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-}
-
-function displayCelsiusTemperature(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  celciusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-}
+    }
+    
+let temperatureElement = document.querySelector("#temperature");
 
 let celsiusTemperature = null;
 
