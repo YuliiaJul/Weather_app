@@ -30,9 +30,7 @@ button:hover {
   cursor: pointer;
 }
 
-#current-location {
-  width: 200%;
-}
+
 
 ul {
   list-style: none;
@@ -48,7 +46,8 @@ ul {
 
 .city {
   font-size: 40px;
-  line-height: 2em;
+  line-height: 1.5em;
+  margin-bottom: 20px;
 }
 
 .temperature {
