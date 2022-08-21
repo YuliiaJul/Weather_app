@@ -30,8 +30,6 @@ button:hover {
   cursor: pointer;
 }
 
-
-
 ul {
   list-style: none;
   padding: 0;
@@ -90,4 +88,33 @@ a {
 
 .forecast-temperature-max {
   font-weight: 600;
+}
+
+@media (max-width: 600px) {
+
+  h1 {
+    padding: 20px 0;
+}
+
+  .results {
+  margin: 0 auto;
+}
+
+  .forecast {
+  align-items: center;
+  margin: 0 auto;
+  width: 80%;
+}
+
+  .city {
+  font-size: 26px;
+}
+
+  .temperature {
+  font-size: 26px;
+}
+
+  .units {
+  font-size: 18px;
+}
 }
